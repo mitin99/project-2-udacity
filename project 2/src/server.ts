@@ -3,6 +3,8 @@ import bodyParser from 'body-parser';
 import products_routes from './handlers/product';
 import cors from 'cors'
 import user_routes from './handlers/user';
+import order_routes from './handlers/order';
+import order_product_routes from './handlers/order-product';
 
 
 const app: express.Application = express();
@@ -17,6 +19,8 @@ app.use(cors(corsOptions))
 app.use(bodyParser.json());
 products_routes(app)
 user_routes(app)
+order_routes(app)
+order_product_routes(app)
 
 app.get('/', function (req: Request, res: Response) {
   res.send('Hello World!');
