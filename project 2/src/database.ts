@@ -1,3 +1,4 @@
+import { log } from 'console';
 import dotenv from 'dotenv';
 import { Pool } from 'pg';
 
@@ -6,6 +7,7 @@ const { POSTGRES_HOST, POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD, ENV } =
   process.env;
 let client;
 if (ENV === 'dev') {
+  console.log(ENV);
   client = new Pool({
     host: POSTGRES_HOST,
     database: POSTGRES_DB,
@@ -14,4 +16,4 @@ if (ENV === 'dev') {
   });
 }
 
-export default client;
+export default client as Pool;
