@@ -5,5 +5,12 @@
     "database": "storefront",
     "user": "storefront_user",
     "password": "password123"
+  },
+  "test": {
+    "driver": "pg",
+    "host": "localhost",
+    "database": "storefront_test",
+    "user": "storefront_user",
+    "password": "password123"
   }
 }
